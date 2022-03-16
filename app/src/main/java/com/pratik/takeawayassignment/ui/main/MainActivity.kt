@@ -1,7 +1,6 @@
 package com.pratik.takeawayassignment.ui.main
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -60,7 +59,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             restaurantsListAdapter.restaurantsList = list
         }
         viewModel.availableSortOptionsListLiveData.observe(this) {
-            it.getContentIfNotHanlded()?.let { list ->
+            it.getContentIfNotHandled()?.let { list ->
                 showSortOptionsDialog(list)
             }
         }

@@ -37,7 +37,7 @@ class MainViewModelTest {
             val actualSearchResults = listOf(
                 mainRepository.orderAheadRestaurant2,
                 mainRepository.closedRestaurant1,
-            ).getRestaurantModelList(SortingParameters.None)
+            ) getRestaurantModelList(SortingParameters.None)
 
             val query = "Burger"
             mainViewModel.searchRestaurantByName(query)
@@ -76,7 +76,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant3,
                 mainRepository.closedRestaurant6,
                 mainRepository.closedRestaurant1,
-            ).getRestaurantModelList(SortingParameters.BestMatch)
+            ) getRestaurantModelList(SortingParameters.BestMatch)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.BestMatch)
 
@@ -97,7 +97,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant3,
                 mainRepository.closedRestaurant6,
                 mainRepository.closedRestaurant1
-            ).getRestaurantModelList(SortingParameters.Newest)
+            ) getRestaurantModelList(SortingParameters.Newest)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.Newest)
             val sortedList = mainViewModel.restaurantResponseListLiveData.getOrAwaitValue { }
@@ -114,7 +114,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant3,
                 mainRepository.closedRestaurant6,
                 mainRepository.closedRestaurant1
-            ).getRestaurantModelList(SortingParameters.RatingAverage)
+            ) getRestaurantModelList(SortingParameters.RatingAverage)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.RatingAverage)
             val sortedList = mainViewModel.restaurantResponseListLiveData.getOrAwaitValue { }
@@ -131,7 +131,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant2,
                 mainRepository.closedRestaurant1,
                 mainRepository.closedRestaurant6,
-            ).getRestaurantModelList(SortingParameters.Distance)
+            ) getRestaurantModelList(SortingParameters.Distance)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.Distance)
             val sortedList = mainViewModel.restaurantResponseListLiveData.getOrAwaitValue { }
@@ -148,7 +148,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant3,
                 mainRepository.closedRestaurant6,
                 mainRepository.closedRestaurant1
-            ).getRestaurantModelList(SortingParameters.Popularity)
+            ) getRestaurantModelList(SortingParameters.Popularity)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.Popularity)
             val sortedList = mainViewModel.restaurantResponseListLiveData.getOrAwaitValue { }
@@ -166,7 +166,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant2,
                 mainRepository.closedRestaurant1,
                 mainRepository.closedRestaurant6,
-            ).getRestaurantModelList(SortingParameters.AverageProductPrice)
+            ) getRestaurantModelList(SortingParameters.AverageProductPrice)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.AverageProductPrice)
             val sortedList = mainViewModel.restaurantResponseListLiveData.getOrAwaitValue { }
@@ -184,7 +184,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant2,
                 mainRepository.closedRestaurant1,
                 mainRepository.closedRestaurant6,
-            ).getRestaurantModelList(SortingParameters.DeliveryCosts)
+            ) getRestaurantModelList(SortingParameters.DeliveryCosts)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.DeliveryCosts)
             val sortedList = mainViewModel.restaurantResponseListLiveData.getOrAwaitValue { }
@@ -202,7 +202,7 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant2,
                 mainRepository.closedRestaurant1,
                 mainRepository.closedRestaurant6,
-            ).getRestaurantModelList(SortingParameters.MinCost)
+            ) getRestaurantModelList(SortingParameters.MinCost)
 
             mainViewModel.sortRestaurantsByParameter(SortingParameters.MinCost)
             val sortedList = mainViewModel.restaurantResponseListLiveData.getOrAwaitValue { }
@@ -219,10 +219,9 @@ class MainViewModelTest {
                 mainRepository.orderAheadRestaurant3,
                 mainRepository.closedRestaurant1,
                 mainRepository.closedRestaurant6,
-            ).getRestaurantModelList(SortingParameters.None)
+            ) getRestaurantModelList(SortingParameters.None)
 
-            val list: List<Restaurant> = mainRepository.getRestaurantList()
-                .getRestaurantModelList(SortingParameters.None)
+            val list: List<Restaurant> = mainRepository.getRestaurantList() getRestaurantModelList(SortingParameters.None)
 
             val viewModelSortedList = mainViewModel.sortRestaurantsByOpenState(list)
 

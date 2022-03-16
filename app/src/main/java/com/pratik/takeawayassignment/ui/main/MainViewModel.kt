@@ -47,7 +47,7 @@ class MainViewModel @Inject constructor(
             val filteredList = mainRepository.getRestaurantList().filter {
                 it.name.lowercase().contains(query.lowercase())
             }
-            val restaurantList = filteredList.getRestaurantModelList(SortingParameters.None)
+            val restaurantList = filteredList getRestaurantModelList(SortingParameters.None)
             _restaurantListLiveData.postValue(restaurantList)
             _selectedSortParameterLiveData.postValue(SortingParameters.None)
         }
@@ -73,7 +73,7 @@ class MainViewModel @Inject constructor(
             }
 
             //set selected sort indicator
-            val mappedList = sortedList.getRestaurantModelList(parameter)
+            val mappedList = sortedList getRestaurantModelList(parameter)
 
             _restaurantListLiveData.postValue(
                 mappedList
